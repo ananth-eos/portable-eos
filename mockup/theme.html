@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>On Death — how we have thought about it — Marginalia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="container nav">
+    <a href="index.html" class="logo">Marginalia<span>.</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Ideas</a>
+      <a href="theme.html" class="active">Themes</a>
+      <a href="book.html">Books</a>
+      <a href="#">Threads</a>
+    </nav>
+    <div class="nav-right">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input class="search" placeholder="Search ideas, books, authors…">
+      </div>
+      <a href="#" class="btn">Sign in</a>
+      <a href="#" class="btn btn-primary">Become a member</a>
+    </div>
+  </div>
+</header>
+
+<section class="theme-header">
+  <div class="container">
+    <div class="kicker">Theme</div>
+    <h1><em style="font-style: italic;">On</em> Death</h1>
+    <p>Of all the things we cannot avoid, this is the one humans have written about longest. Here are 22 ideas across roughly 2,000 years — argument, consolation, protest, acceptance.</p>
+  </div>
+</section>
+
+<section class="timeline">
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+      <div class="kicker" style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);">The argument over time</div>
+      <div style="font-size: 0.75rem; color: var(--muted);">Hover any dot · 100 BCE → 1920</div>
+    </div>
+
+    <div class="timeline-track">
+      <!-- era bands -->
+      <div class="timeline-era" style="left: 0%; width: 30%; background: var(--era-antiquity);"></div>
+      <div class="timeline-era" style="left: 30%; width: 25%; background: var(--era-medieval);"></div>
+      <div class="timeline-era" style="left: 55%; width: 17%; background: var(--era-renaissance);"></div>
+      <div class="timeline-era" style="left: 72%; width: 11%; background: var(--era-enlightenment);"></div>
+      <div class="timeline-era" style="left: 83%; width: 12%; background: var(--era-nineteenth);"></div>
+
+      <!-- axis -->
+      <div class="timeline-axis"></div>
+
+      <!-- era labels -->
+      <div class="timeline-label" style="left: 15%;">Antiquity</div>
+      <div class="timeline-label" style="left: 42%;">Medieval</div>
+      <div class="timeline-label" style="left: 63%;">Renaissance</div>
+      <div class="timeline-label" style="left: 77.5%;">Enlightenment</div>
+      <div class="timeline-label" style="left: 89%;">19th c.</div>
+
+      <!-- dots -->
+      <div class="timeline-dot" data-era="antiquity" style="left: 6%;"></div>
+      <div class="timeline-year" style="left: 6%;">Lucretius · 55 BCE</div>
+
+      <div class="timeline-dot" data-era="antiquity" style="left: 14%;"></div>
+
+      <div class="timeline-dot" data-era="antiquity" style="left: 18%;"></div>
+      <div class="timeline-year" style="left: 18%;">Aurelius · 170</div>
+
+      <div class="timeline-dot" data-era="medieval" style="left: 28%;"></div>
+      <div class="timeline-year" style="left: 28%;">Augustine · 397</div>
+
+      <div class="timeline-dot" data-era="renaissance" style="left: 67%;"></div>
+      <div class="timeline-year" style="left: 67%;">Montaigne · 1580</div>
+
+      <div class="timeline-dot" data-era="enlightenment" style="left: 74%;"></div>
+      <div class="timeline-year" style="left: 74%;">Pascal · 1670</div>
+
+      <div class="timeline-dot" data-era="enlightenment" style="left: 80%;"></div>
+
+      <div class="timeline-dot" data-era="nineteenth" style="left: 85%;"></div>
+      <div class="timeline-year" style="left: 85%;">Schopenhauer · 1819</div>
+
+      <div class="timeline-dot" data-era="nineteenth" style="left: 90%;"></div>
+
+      <div class="timeline-dot" data-era="nineteenth" style="left: 92%;"></div>
+      <div class="timeline-year" style="left: 92%;">Tolstoy · 1886</div>
+
+      <div class="timeline-dot" data-era="nineteenth" style="left: 95%;"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 2rem;">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">Chronological — the full conversation</div>
+        <h2>Voices, in order</h2>
+      </div>
+      <div style="font-size: 0.8125rem; color: var(--muted);">22 ideas · 9 authors</div>
+    </div>
+
+    <div class="grid">
+
+      <a href="#" class="card" data-era="antiquity">
+        <span class="era" data-era="antiquity">Antiquity · 55 BCE</span>
+        <p class="idea-text long">Why fear death? Where it is, we are not; where we are, it is not.</p>
+        <div class="source"><b>Lucretius</b><span class="dot"></span>On the Nature of Things<span class="dot"></span>III</div>
+      </a>
+
+      <a href="idea.html" class="card" data-era="antiquity">
+        <span class="era" data-era="antiquity">Antiquity · 170</span>
+        <p class="idea-text long">Do every act of your life as if it were your last — free from frivolity, insincerity, and self-regard.</p>
+        <div class="source"><b>Marcus Aurelius</b><span class="dot"></span>Meditations<span class="dot"></span>II.5</div>
+      </a>
+
+      <a href="#" class="card" data-era="medieval">
+        <span class="era" data-era="medieval">Medieval · 397</span>
+        <p class="idea-text long">Death is a good that is also a grief; what it robs from us in the flesh it restores to us in the soul.</p>
+        <div class="source"><b>Augustine</b><span class="dot"></span>Confessions<span class="dot"></span>IX</div>
+      </a>
+
+      <a href="#" class="card" data-era="renaissance">
+        <span class="era" data-era="renaissance">Renaissance · 1580</span>
+        <p class="idea-text long">To philosophize is to learn to die. He who has learned how to die has unlearned how to be a slave.</p>
+        <div class="source"><b>Montaigne</b><span class="dot"></span>Essays<span class="dot"></span>I.20</div>
+      </a>
+
+      <a href="#" class="card" data-era="enlightenment">
+        <span class="era" data-era="enlightenment">Enlightenment · 1670</span>
+        <p class="idea-text long">Men, not being able to cure death, have decided — in order to be happy — not to think of it.</p>
+        <div class="source"><b>Pascal</b><span class="dot"></span>Pensées<span class="dot"></span>§168</div>
+      </a>
+
+      <a href="#" class="card" data-era="nineteenth">
+        <span class="era" data-era="nineteenth">19th Century · 1819</span>
+        <p class="idea-text long">To die willingly, to die gladly, is the privilege of the resigned — of him who surrenders and denies the will to live.</p>
+        <div class="source"><b>Schopenhauer</b><span class="dot"></span>The World as Will<span class="dot"></span>IV.69</div>
+      </a>
+
+      <a href="#" class="card" data-era="nineteenth">
+        <span class="era" data-era="nineteenth">19th Century · 1886</span>
+        <p class="idea-text long">Ivan Ilyich's life had been most simple and most ordinary — and therefore most terrible.</p>
+        <div class="source"><b>Tolstoy</b><span class="dot"></span>The Death of Ivan Ilyich<span class="dot"></span>II</div>
+      </a>
+
+    </div>
+
+    <div class="paywall" style="margin-top: 3rem;">
+      <div class="kicker">Members</div>
+      <h3>See these 22 ideas as a guided thread</h3>
+      <p>The editors have woven these voices into <em>How we have thought about death</em> — a 12-minute reading arc with context between each idea. Also unlocks the interactive timeline and semantic search.</p>
+      <div style="display: flex; gap: 0.75rem; justify-content: center;">
+        <a href="#" class="btn btn-primary">Become a member — $6/mo</a>
+        <a href="#" class="btn">Read a sample thread</a>
+      </div>
+      <p style="margin-top: 1.25rem; font-size: 0.75rem;">Individual ideas stay free forever. Threads and timeline are for members.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container">
+    <div class="copyright" style="margin-top: 0; padding-top: 0; border: 0;">
+      <span>© Marginalia. Texts are public domain. Summaries © the editors.</span>
+      <span>A reading room for the long present.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
