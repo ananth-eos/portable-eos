@@ -1,12 +1,23 @@
 :root {
-  --bg: #FAF7F2;
+  --bg: #FAFAF8;
   --bg-elev: #FFFFFF;
-  --text: #1A1814;
-  --muted: #6B6558;
-  --border: #E8E2D5;
-  --border-strong: #D4CCB8;
-  --accent: #1A1814;
+  --text: #18181B;
+  --muted: #6B6B73;
+  --border: #E8E8E4;
+  --border-strong: #D4D4D0;
+  --accent: #4A4FA1;
 
+  /* Genre accents (replaces era system) */
+  --g-business: #1F6E5C;
+  --g-psychology: #4A4FA1;
+  --g-science: #B8553A;
+  --g-self: #C19038;
+  --g-history: #5F6B73;
+  --g-philosophy: #7A3E5C;
+  --g-biography: #2F5C7A;
+  --g-fiction: #8B3A3A;
+
+  /* legacy era aliases (used by theme.html) */
   --era-antiquity: #B8864F;
   --era-medieval: #8B3A3A;
   --era-renaissance: #5C7A3E;
@@ -20,13 +31,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #14120F;
-    --bg-elev: #1C1A16;
-    --text: #EDE7D8;
-    --muted: #9A9383;
-    --border: #2A2720;
-    --border-strong: #3A372E;
-    --accent: #EDE7D8;
+    --bg: #0F0F12;
+    --bg-elev: #18181C;
+    --text: #EDEDF0;
+    --muted: #9999A0;
+    --border: #26262B;
+    --border-strong: #36363C;
+    --accent: #8488D8;
   }
 }
 
@@ -253,6 +264,14 @@ header.site {
 .card[data-era="enlightenment"]::before { background: var(--era-enlightenment); }
 .card[data-era="nineteenth"]::before { background: var(--era-nineteenth); }
 .card[data-era="modern"]::before { background: var(--era-modern); }
+.card[data-genre="business"]::before { background: var(--g-business); }
+.card[data-genre="psychology"]::before { background: var(--g-psychology); }
+.card[data-genre="science"]::before { background: var(--g-science); }
+.card[data-genre="self"]::before { background: var(--g-self); }
+.card[data-genre="history"]::before { background: var(--g-history); }
+.card[data-genre="philosophy"]::before { background: var(--g-philosophy); }
+.card[data-genre="biography"]::before { background: var(--g-biography); }
+.card[data-genre="fiction"]::before { background: var(--g-fiction); }
 
 .card .idea-text {
   font-family: var(--serif);
@@ -302,6 +321,220 @@ header.site {
 .era[data-era="enlightenment"] { color: var(--era-enlightenment); }
 .era[data-era="nineteenth"] { color: var(--era-nineteenth); }
 .era[data-era="modern"] { color: var(--era-modern); }
+.era[data-genre="business"] { color: var(--g-business); }
+.era[data-genre="psychology"] { color: var(--g-psychology); }
+.era[data-genre="science"] { color: var(--g-science); }
+.era[data-genre="self"] { color: var(--g-self); }
+.era[data-genre="history"] { color: var(--g-history); }
+.era[data-genre="philosophy"] { color: var(--g-philosophy); }
+.era[data-genre="biography"] { color: var(--g-biography); }
+.era[data-genre="fiction"] { color: var(--g-fiction); }
+
+/* -------- book cover (genre variants) -------- */
+.cover {
+  aspect-ratio: 2/3;
+  border-radius: 3px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--serif);
+  color: #fff;
+  position: relative;
+  box-shadow: 0 12px 24px -10px rgba(0,0,0,0.25), 0 2px 6px -2px rgba(0,0,0,0.15);
+  overflow: hidden;
+  text-decoration: none;
+}
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(255,255,255,0.18);
+  pointer-events: none;
+  border-radius: 1px;
+}
+.cover .t {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.cover .a {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: var(--sans);
+  font-weight: 500;
+  opacity: 0.85;
+}
+.cover[data-genre="business"] { background: linear-gradient(160deg, #2A8973 0%, #1F6E5C 100%); }
+.cover[data-genre="psychology"] { background: linear-gradient(160deg, #5A60BC 0%, #3D419A 100%); }
+.cover[data-genre="science"] { background: linear-gradient(160deg, #C56849 0%, #993E25 100%); }
+.cover[data-genre="self"] { background: linear-gradient(160deg, #D4A347 0%, #A87625 100%); }
+.cover[data-genre="history"] { background: linear-gradient(160deg, #6E7A82 0%, #4A555C 100%); }
+.cover[data-genre="philosophy"] { background: linear-gradient(160deg, #8E4A6E 0%, #683048 100%); }
+.cover[data-genre="biography"] { background: linear-gradient(160deg, #3F6F8E 0%, #284B66 100%); }
+.cover[data-genre="fiction"] { background: linear-gradient(160deg, #A04848 0%, #7A2828 100%); }
+
+.cover.cover-lg .t { font-size: 1.625rem; }
+.cover.cover-sm { padding: 1rem 0.875rem; }
+.cover.cover-sm .t { font-size: 0.9375rem; }
+.cover.cover-sm .a { font-size: 0.625rem; }
+
+/* -------- thesis callout (replaces book passage) -------- */
+.thesis {
+  margin: 2rem 0;
+  padding: 2rem 2.25rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+}
+.thesis .label {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.thesis p {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  color: var(--text);
+  margin: 0;
+}
+
+/* -------- cover grid (home) -------- */
+.cover-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 1000px) { .cover-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px) { .cover-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.cover-tile { display: flex; flex-direction: column; gap: 0.5rem; }
+.cover-tile .t {
+  font-family: var(--serif);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text);
+}
+.cover-tile .a {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* -------- genre tile -------- */
+.genre-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.875rem;
+}
+@media (max-width: 800px) { .genre-grid { grid-template-columns: repeat(2, 1fr); } }
+.genre-tile {
+  padding: 1.25rem 1.25rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elev);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: border-color 0.15s, transform 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+.genre-tile:hover { border-color: var(--border-strong); text-decoration: none; transform: translateY(-1px); }
+.genre-tile::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--g-business);
+}
+.genre-tile[data-genre="psychology"]::before { background: var(--g-psychology); }
+.genre-tile[data-genre="science"]::before { background: var(--g-science); }
+.genre-tile[data-genre="self"]::before { background: var(--g-self); }
+.genre-tile[data-genre="history"]::before { background: var(--g-history); }
+.genre-tile[data-genre="philosophy"]::before { background: var(--g-philosophy); }
+.genre-tile[data-genre="biography"]::before { background: var(--g-biography); }
+.genre-tile[data-genre="fiction"]::before { background: var(--g-fiction); }
+.genre-tile .name {
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.genre-tile .count {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* -------- featured book hero (home) -------- */
+.featured {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  padding: 3rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  align-items: center;
+}
+@media (max-width: 800px) { .featured { grid-template-columns: 1fr; padding: 2rem; } }
+.featured .kicker {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.featured h2 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 0.375rem;
+}
+.featured .byline {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+.featured .preview-ideas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.featured .preview-ideas li {
+  list-style: none;
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.4;
+  padding-left: 1.25rem;
+  position: relative;
+  color: var(--text);
+}
+.featured .preview-ideas li::before {
+  content: counter(ideanum, decimal-leading-zero);
+  counter-increment: ideanum;
+  position: absolute;
+  left: 0;
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  top: 0.3em;
+}
+.featured ul { counter-reset: ideanum; padding: 0; }
 
 /* -------- idea page -------- */
 .breadcrumb {
